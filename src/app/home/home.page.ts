@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomePage {
 
+  constructor() {}
+
   public nome:string = "";
 
   public lista:any[] = [
@@ -32,10 +34,14 @@ export class HomePage {
     }
   ]
 
-  constructor() {}
 
-  adicionar(){
+  public adicionar(){
     this.lista.push({Titulo: this.nome});
     this.nome = "";
+  }
+
+  public remover(objeto:object){
+    const index = this.lista.indexOf(objeto);
+    this.lista.splice(index, 1);
   }
 }

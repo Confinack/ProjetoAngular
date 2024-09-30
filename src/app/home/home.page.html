@@ -20,10 +20,8 @@
     <ion-item
     *ngFor="let item of lista"
     >
-      <ion-label>
-        {{item.Titulo}}
-      </ion-label>
-      <ion-button slot = "end" color = "danger">
+      <ion-label>{{item.Titulo}}</ion-label>
+      <ion-button slot = "end" color = "danger" (click)="remover(item)">
         <ion-icon slot = "icon-only" name = "trash"></ion-icon>
       </ion-button>
     </ion-item>
