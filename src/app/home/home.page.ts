@@ -17,6 +17,16 @@ export class HomePage {
   public peso:number = 0;
   public altura:number = 0;
 
+  async createAlert(result:string){
+    const alert = await this.alertController.create({
+      header: "Atencao",
+      message: result,
+      buttons: ["OK"]
+    })
+
+    await alert.present()
+  }
+
   async calcular(){
     let result:string = "";
     const IMC = this.peso / (this.altura * this.altura);
@@ -24,39 +34,19 @@ export class HomePage {
     if(IMC < 18.5){
       // Peso menor que 18.5
       result = "Abaixo do peso";
-      const alert = await this.alertController.create({
-        header: "Atencao",
-        message: result,
-        buttons: ["OK"]
-      })
-      await alert.present()
+      this.createAlert(result);
     }else if (IMC < 24.9){
       // Peso maior ou igual a 18.5 e menor que 24.9
       result = "Peso normal"
-      const alert = await this.alertController.create({
-        header: "Parabéns",
-        message: result,
-        buttons: ["OK"]
-      })
-      await alert.present()
+      this.createAlert(result);
     }else if (IMC < 29.9 && IMC >= 25){
       // Peso maior ou igual a 25 e menor que 29.9
       result = "Sobrepeso"
-      const alert = await this.alertController.create({
-        header: "Atencao",
-        message: result,
-        buttons: ["OK"]
-      })
-      await alert.present()
+      this.createAlert(result);
     }else {
       // Se for maior que 29.9 então, sobrepeso
       result = "Obesidade"
-      const alert = await this.alertController.create({
-        header: "Atencao",
-        message: result,
-        buttons: ["OK"]
-      })
-      await alert.present()
+      this.createAlert(result);
     }
     
     console.log(IMC);
