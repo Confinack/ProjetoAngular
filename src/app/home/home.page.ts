@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -11,28 +12,53 @@ import { FormsModule } from '@angular/forms';
   imports: [IonicModule, CommonModule, FormsModule],
 })
 export class HomePage {
-  constructor() {}
+  constructor(private alertController: AlertController) {}
 
   public peso:number = 0;
   public altura:number = 0;
 
-  public calcular(){
+  async calcular(){
     let result:string = "";
     const IMC = this.peso / (this.altura * this.altura);
+
     if(IMC < 18.5){
       // Peso menor que 18.5
       result = "Abaixo do peso";
+      const alert = await this.alertController.create({
+        header: "Atencao",
+        message: result,
+        buttons: ["OK"]
+      })
+      await alert.present()
     }else if (IMC < 24.9){
       // Peso maior ou igual a 18.5 e menor que 24.9
       result = "Peso normal"
+      const alert = await this.alertController.create({
+        header: "Parabéns",
+        message: result,
+        buttons: ["OK"]
+      })
+      await alert.present()
     }else if (IMC < 29.9 && IMC >= 25){
       // Peso maior ou igual a 25 e menor que 29.9
       result = "Sobrepeso"
+      const alert = await this.alertController.create({
+        header: "Atencao",
+        message: result,
+        buttons: ["OK"]
+      })
+      await alert.present()
     }else {
       // Se for maior que 29.9 então, sobrepeso
       result = "Obesidade"
+      const alert = await this.alertController.create({
+        header: "Atencao",
+        message: result,
+        buttons: ["OK"]
+      })
+      await alert.present()
     }
-
+    
     console.log(IMC);
     console.log(result);
   }
