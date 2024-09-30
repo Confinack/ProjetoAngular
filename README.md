@@ -25,35 +25,35 @@ Configurações adicionadas ao projeto:
     rxjs                            7.5.7
     typescript                      4.8.4
 
-ion-header
-ion-toolbar
-ion-title
+ion-header;
+ion-toolbar;
+ion-title;
 
-ion-content
-ion-list
-ion-item
-ion-input
+ion-content;
+ion-list;
+ion-item;
+ion-input;
 
-ion-button
+ion-button;
 
-ion-list
-ion-item
+ion-list;
+ion-item;
 
-ion-label
-ion-button
-ion-icon
+ion-label;
+ion-button;
+ion-icon;
 
-class = ion-padding
-labelPlacement="floating"
-label = "Nome"
-slot = "end" color = "danger"
-slot = "icon-only" name = "trash"
+class = ion-padding;
+labelPlacement="floating";
+label = "Nome";
+slot = "end" color = "danger";
+slot = "icon-only" name = "trash";
 
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-[(ngModel)="variavel"]
-(acao)="funcao()"
-*ngFor="let item of array"
-{{item.propriedade}}
+[(ngModel)="variavel"];
+(acao)="funcao()";
+*ngFor="let item of array";
+{{item.propriedade}};
