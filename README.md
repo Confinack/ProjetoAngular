@@ -24,3 +24,36 @@ Configurações adicionadas ao projeto:
     @schematics/angular             15.2.6
     rxjs                            7.5.7
     typescript                      4.8.4
+
+ion-header
+ion-toolbar
+ion-title
+
+ion-content
+ion-list
+ion-item
+ion-input
+
+ion-button
+
+ion-list
+ion-item
+
+ion-label
+ion-button
+ion-icon
+
+class = ion-padding
+labelPlacement="floating"
+label = "Nome"
+slot = "end" color = "danger"
+slot = "icon-only" name = "trash"
+
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+[(ngModel)="variavel"]
+(acao)="funcao()"
+*ngFor="let item of array"
+{{item.propriedade}}
